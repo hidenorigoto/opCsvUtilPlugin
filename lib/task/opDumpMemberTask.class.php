@@ -62,6 +62,12 @@ EOF;
         $memberObj = new Member();
         $memberObj->fromArray($member);
 
+        // nickname is required
+        if (!$memberObj->getName())
+        {
+            continue;
+        }
+
         $line[] = $memberObj->getId();
         $line[] = $memberObj->getName();
 
