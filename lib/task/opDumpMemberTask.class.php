@@ -63,7 +63,7 @@ EOF;
         $memberObj->fromArray($member);
 
         // nickname is required
-        if (!$memberObj->getName())
+        if (empty($memberObj->getName()))
         {
             continue;
         }
