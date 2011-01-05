@@ -72,12 +72,12 @@ EOF;
         $line[] = $memberObj->getId();
         $line[] = $name;
 
-        $email = $memberObj->getConfig('pc_address');
+        $email = trim($memberObj->getConfig('pc_address'));
         if (empty($email))
         {
             $email = $memberObj->getConfig('mobile_address');
         }
-        $line[] = $email;
+        $line[] = trim($email);
 
         fputcsv($fp, $line, ',', '"');
     }
