@@ -63,13 +63,14 @@ EOF;
         $memberObj->fromArray($member);
 
         // nickname is required
-        if (empty($memberObj->getName()))
+        $name = $memberObj->getName();
+        if (empty($name))
         {
             continue;
         }
 
         $line[] = $memberObj->getId();
-        $line[] = $memberObj->getName();
+        $line[] = $name;
 
         $email = $memberObj->getConfig('pc_address');
         if (empty($email))
