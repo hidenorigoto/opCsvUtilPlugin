@@ -77,6 +77,10 @@ EOF;
         {
             $email = $memberObj->getConfig('mobile_address');
         }
+        if (empty($email))
+        {
+            continue;
+        }
         $line[] = trim($email);
 
         fputcsv($fp, $line, ',', '"');
